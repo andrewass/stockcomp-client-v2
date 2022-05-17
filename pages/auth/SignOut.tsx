@@ -1,6 +1,6 @@
 import {NextPage} from "next";
 
-const SignOut : NextPage = () => {
+function SignOut(){
     return(
         <button>
             SIGN OUT

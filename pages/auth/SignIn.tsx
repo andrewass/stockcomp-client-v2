@@ -1,10 +1,8 @@
-import {NextPage} from "next";
 import Link from "next/link";
-import styles from "../../styles/Home.module.css"
 
-const SignIn: NextPage = () => {
+export default function SignIn() {
     return (
-        <div className={styles.main}>
+        <div>
             <form>
                 <label>
                     Name:
@@ -16,5 +14,3 @@ const SignIn: NextPage = () => {
         </div>
     )
 }
-
-export default SignIn
