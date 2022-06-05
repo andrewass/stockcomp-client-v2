@@ -1,4 +1,7 @@
 
+/**
+ * @type {import('next').NextConfig}
+ **/
 module.exports = {
     reactStrictMode: true,
     async redirects() {
@@ -9,9 +12,6 @@ module.exports = {
                 permanent: true
             }
         ]
-    },
-    env: {
-        STOCK_BASE_URL: 'http://localhost:8080'
     }
 }
 
