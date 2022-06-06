@@ -1,5 +1,6 @@
 import {useRouter} from "next/router";
-import {getTrendingSymbols} from "../api/trending";
+import {GetServerSideProps} from "next";
+import {getHistoricalQuotes, getSymbolDetails} from "../api/symbol";
 
 const SymbolDetails = () => {
     const router = useRouter()
@@ -10,10 +11,12 @@ const SymbolDetails = () => {
     )
 }
 
-export const getServerSideProps = async () => {
-    const symbolDetails = await getTrendingSymbols()
-    const historicQuotes = await getTrendingSymbols()
-
+export const getServerSideProps : GetServerSideProps = async (context) => {
+    const { symbol } = context.query
+    const [symbolDetails, historicQuotes] = await Promise.all([
+        getSymbolDetails(symbol as String),
+        getHistoricalQuotes(symbol as String)
+    ]);
     return {props: {symbolDetails, historicQuotes}}
 }
 
