@@ -15,6 +15,8 @@ export const StockTable = ({symbols}: Props) => {
                     <Table.HeaderCell>Select</Table.HeaderCell>
                     <Table.HeaderCell>Symbol</Table.HeaderCell>
                     <Table.HeaderCell>Name</Table.HeaderCell>
+                    <Table.HeaderCell>Price</Table.HeaderCell>
+                    <Table.HeaderCell>Change</Table.HeaderCell>
                 </Table.Row>
             </Table.Header>
             <Table.Body>

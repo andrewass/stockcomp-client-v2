@@ -1,5 +1,6 @@
+import {HistoricQuote, SymbolDetails} from "../../types/types";
 
-export const getSymbolDetails = async (symbol : String) => {
+export async function getSymbolDetails(symbol : String) : Promise<SymbolDetails>{
     const path = process.env.STOCK_BASE_URL+"/stock/symbol-information?"
     const param = new URLSearchParams({
         symbol: symbol as string
@@ -9,7 +10,7 @@ export const getSymbolDetails = async (symbol : String) => {
     return await response.json()
 }
 
-export const getHistoricalQuotes = async (symbol : String) => {
+export async function getHistoricalQuotes(symbol : String) : Promise<HistoricQuote[]>{
     const path = process.env.STOCK_BASE_URL+"/stock/historical-quotes?"
     const param = new URLSearchParams({
         symbol: symbol as string

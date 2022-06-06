@@ -10,12 +10,14 @@ export const SymbolRow = ({symbol}: Props) => {
     return (
         <Table.Row>
             <Table.DataCell>
-                <Link href={"/symbol/"+symbol.symbol}>
+                <Link href={"/symbol/" + symbol.symbol}>
                     <a><Data/></a>
                 </Link>
             </Table.DataCell>
             <Table.DataCell>{symbol.symbol}</Table.DataCell>
             <Table.DataCell>{symbol.name}</Table.DataCell>
+            <Table.DataCell>{symbol.price}</Table.DataCell>
+            <Table.DataCell>{symbol.priceChange.toFixed(2)}</Table.DataCell>
         </Table.Row>
     )
 }
